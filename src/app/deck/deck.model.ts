@@ -1,7 +1,7 @@
 export class Deck {
     constructor(
-        public id: number,
-        public name: string,
-        public owner_id: number
+        public deck_id: number,
+        public deck_name: string,
+        public creator_id: number
     ) { }
 }
