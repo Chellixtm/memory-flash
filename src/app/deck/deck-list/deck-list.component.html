@@ -1,4 +1,6 @@
 <div *ngIf="!decks"><h3>Loading...</h3></div>
-<div class="container" *ngIf="decks">
-    <app-deck-item *ngFor="let deck of decks" [deck]="deck"></app-deck-item>
+<div class="container space-above" *ngIf="decks">
+    <div class="row row-cols-3">
+        <app-deck-item *ngFor="let deck of decks" [deck]="deck"></app-deck-item>
+    </div>
 </div>
