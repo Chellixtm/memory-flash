@@ -7,6 +7,6 @@
     </ul>
     <a *ngIf="!isLogged" class="text-light navbar-text" [routerLink]="['/login']">Login</a>
     <a *ngIf="!isLogged" class="text-light navbar-text margin-left" [routerLink]="['/signup']">Sign Up</a>
-    <a *ngIf="isLogged" class="text-light navbar-text" [routerLink]="['/user/details']">User Details</a>
+    <a *ngIf="isLogged" class="text-light navbar-text" [routerLink]="['/user/details']">{{ username }} Details</a>
     <a *ngIf="isLogged" class="text-light navbar-text margin-left" (click)="onLogout()">Logout</a>
 </nav>

@@ -1,4 +1,5 @@
 <div *ngIf="!decks"><h3>Loading...</h3></div>
+<button [routerLink]="['/decks/new']" class="btn btn-success">Create New Deck</button>
 <div class="container space-above" *ngIf="decks">
     <div class="row row-cols-3">
         <app-deck-item *ngFor="let deck of decks" [deck]="deck"></app-deck-item>

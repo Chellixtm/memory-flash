@@ -46,11 +46,12 @@ export class DeckEditComponent implements OnInit {
 
   onSubmit() {
     this.deckService.addDeck(this.deckForm.value);
+    this.router.navigate(['/decks/list']);
   }
 
   private initForm() {
     let deck_name: string = '';
-    let creator_id: number = 1;
+    let creator_id: number = parseInt(localStorage.getItem('user_id'));
 
     // if (this.editMode) {
     //   this.deckService.getAllDecks

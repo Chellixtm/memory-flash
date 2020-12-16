@@ -18,7 +18,8 @@ export class DeckService {
     constructor(private http: HttpClient) { }
 
     getAllDecks() {
-        this.http.get<Deck[]>(this.baseUrl + "getUserDecks?id=1").subscribe(result => {
+        const user_id = parseInt(localStorage.getItem('user_id'));
+        this.http.get<Deck[]>(this.baseUrl + "getUserDecks?id=" + user_id).subscribe(result => {
             this.decks = result;
             this.decksChangedEvent.next(this.decks.slice());
         }), catchError(e => {

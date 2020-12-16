@@ -10,15 +10,20 @@ import { AuthService } from '../auth/auth.service';
 export class NavMenuComponent implements OnInit, OnDestroy {
   private authListenerSub: Subscription;
   isLogged:boolean = false;
+  username: string;
 
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
     this.isLogged = this.authService.getIsAuth();
+    if(this.isLogged) {
+      this.username = localStorage.getItem('username');
+    }
     this.authListenerSub = this.authService
     .getAuthStatusListener()
     .subscribe(isAuthenticated => {
       this.isLogged = isAuthenticated;
+      this.username = localStorage.getItem('username');
     });
   }
 
