@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="card text-center">
+        <div class="card-body">
+            <h1 class="card-title">Create Account</h1><br>
+            <form (submit)="onSignup(signupForm)" #signupForm="ngForm">
+                <input type="text" id="username" name="username" placeholder="Username" ngModel required #usernameInput="ngModel"><br><br>
+                <input type="email" id="email" name="email" placeholder="E-Mail" ngModel required email #emailInput="ngModel"><br><br>
+                <input type="password" id="password" name="password" placeholder="Password" ngModel required #passwordInput="ngModel"><br><br>
+                <button type="submit" class="btn btn-primary" [disabled]="!signupForm.valid">Sign Up</button>
+            </form>
+        </div>
+    </div>
+</div>

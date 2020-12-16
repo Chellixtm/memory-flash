@@ -1,8 +1,11 @@
-<nav class="navbar navbar-dark bg-primary">
+<nav class="navbar navbar-dark background-blue">
     <a class="navbar-brand" [routerLink]="['/']">Memory-Flash</a>
     <ul class="navbar-nav mr-auto">
         <li class="nav-item">
             <a class="nav-link" [routerLink]="['/decks/list']">See Decks</a>
         </li>
     </ul>
+    <a *ngIf="!isLogged" class="text-light navbar-text" [routerLink]="['/login']">Login</a>
+    <a *ngIf="!isLogged" class="text-light navbar-text margin-left" [routerLink]="['/signup']">Sign Up</a>
+    <a *ngIf="isLogged" class="text-light" [routerLink]="['/user/details']">User Details</a>
 </nav>

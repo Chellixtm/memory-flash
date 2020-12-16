@@ -1,0 +1,8 @@
+.jumbo-index {
+    background-image: url("../../assets/images/flashcard-jumbo.png");
+    background-size: cover;
+    background-position: center;
+    height: 30rem;
+    padding: 2rem 3rem;
+    margin-top: 2rem;
+}

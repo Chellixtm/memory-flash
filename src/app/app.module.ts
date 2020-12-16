@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
@@ -11,6 +11,12 @@ import { AccountComponent } from './account/account.component';
 import { DeckComponent } from './deck/deck.component';
 import { DeckListComponent } from './deck/deck-list/deck-list.component';
 import { DeckItemComponent } from './deck/deck-item/deck-item.component';
+import { DeckEditComponent } from './deck/deck-edit/deck-edit.component';
+import { UserComponent } from './user/user.component';
+import { UserDetailComponent } from './user/user-detail/user-detail.component';
+import { UserEditComponent } from './user/user-edit/user-edit.component';
+import { LoginComponent } from './auth/login/login.component';
+import { SignupComponent } from './auth/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -20,12 +26,19 @@ import { DeckItemComponent } from './deck/deck-item/deck-item.component';
     AccountComponent,
     DeckComponent,
     DeckListComponent,
-    DeckItemComponent
+    DeckItemComponent,
+    DeckEditComponent,
+    UserComponent,
+    UserDetailComponent,
+    UserEditComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],

@@ -25,4 +25,12 @@ export class DeckService {
             return throwError(e);
         });
     }
+
+    addDeck(deck: Deck) {
+        this.http.post<Deck>(this.baseUrl + 'new', deck).subscribe(result => {
+            console.log(result)
+        }), catchError(e => {
+            return throwError(e);
+        });
+    }
 }

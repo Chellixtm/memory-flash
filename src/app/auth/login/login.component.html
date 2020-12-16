@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="card text-center">
+        <div class="card-body">
+            <h1 class="card-title">Login</h1><br>
+            <form (submit)="onLogin(loginForm)" #loginForm="ngForm">
+                <input type="text" id="username" name="username" placeholder="Username" ngModel required #usernameInput="ngModel"><br><br>
+                <input type="password" id="password" name="password" placeholder="Password" ngModel required #passwordInput="ngModel"><br><br>
+                <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
+            </form>
+            <hr>
+            <p class="card-text"><small class="text-muted">No Account? <a [routerLink]="['/signup']">Create a new one here!</a></small></p>
+        </div>
+    </div>
+</div>
