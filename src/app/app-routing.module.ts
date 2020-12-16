@@ -9,17 +9,18 @@ import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
+import { AuthGuard } from './auth/auth.guard';
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent, pathMatch: 'full' },
     {
         path: 'decks', component: DeckComponent, children: [
             { path: 'list', component: DeckListComponent },
-            { path: 'new', component: DeckEditComponent }
+            { path: 'new', component: DeckEditComponent, canActivate: [AuthGuard] }
         ]
     },
     {
-        path: 'user', component: UserComponent, children: [
+        path: 'user', component: UserComponent, canActivate: [AuthGuard], children: [
             { path: 'detail', component: UserDetailComponent },
             { path: 'edit', component: UserEditComponent }
         ]
@@ -32,7 +33,8 @@ const appRoutes: Routes = [
     imports: [
         RouterModule.forRoot(appRoutes)
     ],
-    exports: [RouterModule]
+    exports: [RouterModule],
+    providers: [AuthGuard]
 })
 export class AppRoutingModule {
 
